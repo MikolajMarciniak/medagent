@@ -1,0 +1,13 @@
+google-adk
+google-generativeai
+fastapi
+uvicorn
+requests
+pydantic
+python-dotenv
+# Placeholder libraries for potential RAG and imaging implementation
+# faiss-cpu
+# sentence-transformers
+# pypdf
+# pydicom
+# openslide-python
