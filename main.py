@@ -2,11 +2,15 @@ import asyncio
 import os
 import logging
 import typer
+import warnings
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
 from src.core.orchestrator import MedicalOrchestrator
 from src.utils.logging_setup import setup_logging
+
+# Suppress asyncio unclosed resource warnings (aiohttp cleanup)
+warnings.filterwarnings("ignore", category=ResourceWarning)
 
 # Setup Logger
 setup_logging()

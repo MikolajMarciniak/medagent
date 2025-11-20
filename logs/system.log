@@ -1719,3 +1719,1157 @@ REASON: Patient is a 65-year-old male presenting with chest pain, high fever, an
 2025-11-20 20:43:38,788 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
 2025-11-20 20:43:41,429 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
 2025-11-20 20:43:41,433 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:44:19,623 - src.core.orchestrator - INFO - Starting Case 917eeaec-ddea-4a98-af61-f7003ecb6189: Chest pain in the center. Pain is 6 out of 10. No other symptoms
+2025-11-20 20:44:19,624 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 20:44:20,548 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:44:20,548 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:44:25,080 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:44:25,080 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 20:44:25,080 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:44:25,084 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 36ac5c5f-93e2-49ed-9311-9ee1a0cfa245
+2025-11-20 20:44:25,998 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:44:25,998 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:44:36,439 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:44:36,439 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:44:36,439 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/3 ---
+2025-11-20 20:44:36,439 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:44:36,443 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2c08d844-234d-41ca-8d1b-c5864f50b188
+2025-11-20 20:44:36,443 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 36ac5c5f-93e2-49ed-9311-9ee1a0cfa245
+2025-11-20 20:44:37,421 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:44:37,421 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:44:40,152 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:44:40,156 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:44:40,156 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 20:44:40,164 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: f775bf3d-0ed8-4eba-8309-d5cdd8690882
+2025-11-20 20:44:40,164 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2c08d844-234d-41ca-8d1b-c5864f50b188
+2025-11-20 20:44:40,164 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 36ac5c5f-93e2-49ed-9311-9ee1a0cfa245
+2025-11-20 20:44:41,122 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:44:42,425 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:44:42,425 - src.core.orchestrator - INFO - Agent evidence finished.
+2025-11-20 20:44:42,425 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:44:42,429 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 10217b7a-870b-4c63-9c53-64f1087c1549
+2025-11-20 20:44:42,429 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: f775bf3d-0ed8-4eba-8309-d5cdd8690882
+2025-11-20 20:44:42,429 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2c08d844-234d-41ca-8d1b-c5864f50b188
+2025-11-20 20:44:42,429 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 36ac5c5f-93e2-49ed-9311-9ee1a0cfa245
+2025-11-20 20:44:43,332 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:44:43,332 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:44:51,287 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:44:51,287 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:46:03,710 - src.core.orchestrator - INFO - User provided: The chest pain started about an hour ago, suddenly while I was just sitting and reading. It feels like a heavy, squeezing pressure right in the center of my chest. It doesn’t really move anywhere, but it kind of radiates slightly toward my left arm. I’ve also been feeling a bit short of breath and a little dizzy, and I noticed some cold sweat breaking out on my forehead. I haven’t felt nauseous yet, though.
+2025-11-20 20:46:03,710 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:46:03,712 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: df002864-781d-465a-abc1-005964efaa35
+2025-11-20 20:46:03,713 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 10217b7a-870b-4c63-9c53-64f1087c1549
+2025-11-20 20:46:03,713 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: f775bf3d-0ed8-4eba-8309-d5cdd8690882
+2025-11-20 20:46:03,714 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:03,714 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:46:12,686 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:12,686 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:46:12,690 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/3 ---
+2025-11-20 20:46:12,690 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:46:12,690 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 309a26b9-a0ec-4e4f-90ac-67d89b55d837
+2025-11-20 20:46:12,690 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: df002864-781d-465a-abc1-005964efaa35
+2025-11-20 20:46:12,690 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 10217b7a-870b-4c63-9c53-64f1087c1549
+2025-11-20 20:46:12,690 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:12,690 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:46:15,610 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:15,614 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:46:15,614 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 20:46:15,614 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: fba9d999-7c73-4682-89b9-f3b40df71dc0
+2025-11-20 20:46:15,614 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 309a26b9-a0ec-4e4f-90ac-67d89b55d837
+2025-11-20 20:46:15,614 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: df002864-781d-465a-abc1-005964efaa35
+2025-11-20 20:46:15,614 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:19,302 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:19,302 - google_genai.types - WARNING - Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2025-11-20 20:46:19,302 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:20,104 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:20,104 - src.core.orchestrator - INFO - Agent evidence finished.
+2025-11-20 20:46:20,104 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:46:20,108 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fd7a204d-b0ee-45fc-9878-14393ab316b6
+2025-11-20 20:46:20,108 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 7271e05d-9e84-469e-919d-b2e82b8dff70
+2025-11-20 20:46:20,108 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 970dd530-4699-4264-9239-89934568672e
+2025-11-20 20:46:20,108 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: fba9d999-7c73-4682-89b9-f3b40df71dc0
+2025-11-20 20:46:20,108 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 309a26b9-a0ec-4e4f-90ac-67d89b55d837
+2025-11-20 20:46:20,108 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:20,112 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:46:23,939 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:23,943 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:46:23,943 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:46:23,947 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: c23a29b8-3d68-4b1c-8897-5706dcc0845c
+2025-11-20 20:46:23,947 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fd7a204d-b0ee-45fc-9878-14393ab316b6
+2025-11-20 20:46:23,947 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 7271e05d-9e84-469e-919d-b2e82b8dff70
+2025-11-20 20:46:23,947 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 970dd530-4699-4264-9239-89934568672e
+2025-11-20 20:46:23,947 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: fba9d999-7c73-4682-89b9-f3b40df71dc0
+2025-11-20 20:46:23,951 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:23,951 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:46:32,625 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:32,633 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:46:32,633 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/3 ---
+2025-11-20 20:46:32,633 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:46:32,641 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 7b82fbf5-1e8d-47b9-9684-336d0c1f99be
+2025-11-20 20:46:32,641 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: c23a29b8-3d68-4b1c-8897-5706dcc0845c
+2025-11-20 20:46:32,641 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fd7a204d-b0ee-45fc-9878-14393ab316b6
+2025-11-20 20:46:32,641 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 7271e05d-9e84-469e-919d-b2e82b8dff70
+2025-11-20 20:46:32,645 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 970dd530-4699-4264-9239-89934568672e
+2025-11-20 20:46:32,649 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:32,651 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:46:34,595 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:34,595 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:46:34,595 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:46:34,599 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b7a51cff-3ac0-4acd-b3be-cce054cb1603
+2025-11-20 20:46:34,602 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 7b82fbf5-1e8d-47b9-9684-336d0c1f99be
+2025-11-20 20:46:34,602 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:46:34,602 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:46:39,233 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:46:39,237 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:50:08,782 - Main - ERROR - System Crash
+Traceback (most recent call last):
+  File "C:\GIT\medagent\main.py", line 37, in run_diagnosis
+    final_case = await orchestrator.run_diagnostic_loop(complaint)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\GIT\medagent\src\core\orchestrator.py", line 113, in run_diagnostic_loop
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\rich\console.py", line 2170, in input
+    result = input()
+             ^^^^^^^
+EOFError
+2025-11-20 20:51:50,587 - src.core.orchestrator - INFO - Starting Case 1103de6e-ae11-433e-8d96-b54dad43842d: Chest pain
+2025-11-20 20:51:50,587 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 20:51:51,530 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:51:51,530 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:51:54,182 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:51:54,182 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 20:51:54,182 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:51:54,184 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: c06d4e29-eba3-4ac9-8132-5aa0f7901d04
+2025-11-20 20:51:55,068 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:51:55,068 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:52:03,046 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:52:03,048 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:52:03,048 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/3 ---
+2025-11-20 20:52:03,048 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:52:03,048 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 543dd944-502a-4fca-bdb8-fbfad5576e86
+2025-11-20 20:52:03,050 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: c06d4e29-eba3-4ac9-8132-5aa0f7901d04
+2025-11-20 20:52:03,925 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:52:03,927 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:52:06,937 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:52:06,941 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:52:06,941 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:52:06,945 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 81ca5ede-aa91-42e0-a529-f9612db63a50
+2025-11-20 20:52:06,945 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 543dd944-502a-4fca-bdb8-fbfad5576e86
+2025-11-20 20:52:06,945 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: c06d4e29-eba3-4ac9-8132-5aa0f7901d04
+2025-11-20 20:52:07,822 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:52:07,823 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:52:11,888 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:52:11,890 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:53:35,848 - src.core.orchestrator - INFO - Starting Case b34abe2e-230a-4d78-b55d-3c9a5dd2c3d3: Intense chest pain, tightnes, high fever, oxygen saturation below 70%
+2025-11-20 20:53:35,848 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 20:53:36,719 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:53:36,719 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:53:38,476 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:53:38,476 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 20:53:38,476 - src.core.orchestrator - CRITICAL - EMERGENCY PROTOCOL ACTIVATED: ACTION: EMERGENCY_ABORT - Severe hypoxemia (oxygen saturation below 70%) is an immediate life threat. Intense chest pain also requires urgent evaluation.
+2025-11-20 20:54:06,537 - src.core.orchestrator - INFO - Starting Case 0c8f8485-c559-44d8-9dc3-01a3e10b38f2: Intense chest pain
+2025-11-20 20:54:06,537 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 20:54:07,442 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:54:07,443 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:54:08,909 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:54:08,913 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 20:54:08,913 - src.core.orchestrator - CRITICAL - EMERGENCY PROTOCOL ACTIVATED: ACTION: EMERGENCY_ABORT
+Reason: Intense chest pain is a critical symptom that could indicate an acute life-threatening condition such as a myocardial infarction. Immediate medical evaluation is required.
+2025-11-20 20:54:23,461 - src.core.orchestrator - INFO - Starting Case 7d062529-654c-428e-99de-d781489b5d11: moderate chest pain
+2025-11-20 20:54:23,461 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 20:54:24,379 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:54:24,379 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:54:26,024 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:54:26,024 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 20:54:26,024 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:54:26,028 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 5c05d383-b358-42fc-9db5-2ed41a569a9b
+2025-11-20 20:54:26,894 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:54:26,894 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:54:35,245 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:54:35,247 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:54:35,247 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/3 ---
+2025-11-20 20:54:35,247 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:54:35,247 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 78aeebdf-2309-49a7-bfae-a49eb8b98e5c
+2025-11-20 20:54:35,247 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 5c05d383-b358-42fc-9db5-2ed41a569a9b
+2025-11-20 20:54:36,150 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:54:36,150 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:54:47,665 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:54:47,666 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:54:47,666 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:54:47,666 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 5261a68f-f585-40a8-bea5-3c878b91cff1
+2025-11-20 20:54:47,666 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 78aeebdf-2309-49a7-bfae-a49eb8b98e5c
+2025-11-20 20:54:47,666 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 5c05d383-b358-42fc-9db5-2ed41a569a9b
+2025-11-20 20:54:48,535 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:54:48,535 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:54:53,387 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:54:53,390 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:55:33,865 - src.core.orchestrator - INFO - User provided: I would rate my pain 6 out of 10. But I also have a high temperature and blood sugar level
+2025-11-20 20:55:33,867 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:55:33,869 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: fcfa61b8-61c3-443d-a0a0-211e6ed32bae
+2025-11-20 20:55:33,870 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 5261a68f-f585-40a8-bea5-3c878b91cff1
+2025-11-20 20:55:33,871 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:55:33,871 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:55:48,544 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:55:48,544 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:55:48,548 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/3 ---
+2025-11-20 20:55:48,548 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:55:48,549 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 107fa71e-acce-41d0-b62c-50f348a42f4d
+2025-11-20 20:55:48,549 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: fcfa61b8-61c3-443d-a0a0-211e6ed32bae
+2025-11-20 20:55:48,551 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:55:48,551 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:55:56,382 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:55:56,382 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:55:56,382 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 20:55:56,382 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b1172f34-d9ca-4a26-8143-915bfb88c8d4
+2025-11-20 20:55:56,382 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 107fa71e-acce-41d0-b62c-50f348a42f4d
+2025-11-20 20:55:56,382 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: fcfa61b8-61c3-443d-a0a0-211e6ed32bae
+2025-11-20 20:55:56,386 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 5261a68f-f585-40a8-bea5-3c878b91cff1
+2025-11-20 20:55:56,386 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 78aeebdf-2309-49a7-bfae-a49eb8b98e5c
+2025-11-20 20:55:56,386 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 5c05d383-b358-42fc-9db5-2ed41a569a9b
+2025-11-20 20:55:57,505 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:56:02,425 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:56:02,425 - google_genai.types - WARNING - Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2025-11-20 20:56:02,429 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:56:04,606 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:56:04,610 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:56:10,555 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:56:10,555 - src.core.orchestrator - INFO - Agent evidence finished.
+2025-11-20 20:56:10,555 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 52cbe25f-8fa0-4c17-bd1f-062e5ff3f857
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 64aac758-296f-4fd1-a06b-dec347cf723c
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 153c0ddb-221c-464e-beb6-401e1d9a783d
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 37617715-8623-4b8c-b3a0-e0cd63ab9deb
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: a9c3ee00-6a91-4b05-9aec-7e7a2c20c7da
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b1172f34-d9ca-4a26-8143-915bfb88c8d4
+2025-11-20 20:56:10,558 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 107fa71e-acce-41d0-b62c-50f348a42f4d
+2025-11-20 20:56:10,563 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:56:10,564 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:56:15,775 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:56:15,778 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:57:36,923 - src.core.orchestrator - INFO - User provided: The pain is sharp and acute. I feel burning. It stays in one place in the chest
+2025-11-20 20:57:36,923 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 20:57:36,927 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 47ccce6d-90b2-4da3-a92e-38747d4b901c
+2025-11-20 20:57:36,927 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 52cbe25f-8fa0-4c17-bd1f-062e5ff3f857
+2025-11-20 20:57:36,927 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 64aac758-296f-4fd1-a06b-dec347cf723c
+2025-11-20 20:57:36,928 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 153c0ddb-221c-464e-beb6-401e1d9a783d
+2025-11-20 20:57:36,928 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 37617715-8623-4b8c-b3a0-e0cd63ab9deb
+2025-11-20 20:57:36,928 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: a9c3ee00-6a91-4b05-9aec-7e7a2c20c7da
+2025-11-20 20:57:36,928 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b1172f34-d9ca-4a26-8143-915bfb88c8d4
+2025-11-20 20:57:36,931 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:57:36,932 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:57:53,488 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:57:53,493 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 20:57:53,494 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/3 ---
+2025-11-20 20:57:53,495 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 20:57:53,500 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 6c9e9825-bed2-48d6-824e-8945bd4c8274
+2025-11-20 20:57:53,510 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 47ccce6d-90b2-4da3-a92e-38747d4b901c
+2025-11-20 20:57:53,512 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 52cbe25f-8fa0-4c17-bd1f-062e5ff3f857
+2025-11-20 20:57:53,514 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 64aac758-296f-4fd1-a06b-dec347cf723c
+2025-11-20 20:57:53,515 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 153c0ddb-221c-464e-beb6-401e1d9a783d
+2025-11-20 20:57:53,517 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 37617715-8623-4b8c-b3a0-e0cd63ab9deb
+2025-11-20 20:57:53,518 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: a9c3ee00-6a91-4b05-9aec-7e7a2c20c7da
+2025-11-20 20:57:53,524 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:57:53,526 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:58:00,487 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:58:00,488 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 20:58:00,489 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 20:58:00,492 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: aca8c173-1f40-47d6-9788-86309cf1d07e
+2025-11-20 20:58:00,492 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 6c9e9825-bed2-48d6-824e-8945bd4c8274
+2025-11-20 20:58:00,495 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 20:58:00,496 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 20:58:04,928 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 20:58:04,934 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 20:58:16,741 - src.core.orchestrator - INFO - User provided: I don't know that
+2025-11-20 21:02:16,661 - src.core.orchestrator - INFO - Starting Case bde7091c-3fec-4d85-bfe9-5af14f1fe202: Chest pain
+2025-11-20 21:02:16,662 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 21:02:18,517 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:02:18,579 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:02:20,588 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:02:20,590 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 21:02:20,590 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:02:20,592 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 12cb896d-6e77-49fa-9eb7-cb4a346d902d
+2025-11-20 21:02:22,499 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:02:22,500 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:02:31,526 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:02:31,528 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:02:31,528 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/10 ---
+2025-11-20 21:02:31,529 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:02:31,531 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 81583f54-d14b-408f-8624-bbd755cea573
+2025-11-20 21:02:31,532 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 12cb896d-6e77-49fa-9eb7-cb4a346d902d
+2025-11-20 21:02:32,601 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:02:32,602 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:02:37,654 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:02:37,655 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:02:37,656 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 21:02:37,657 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c32c871-534a-42fa-9034-85a72d84801a
+2025-11-20 21:02:37,657 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 81583f54-d14b-408f-8624-bbd755cea573
+2025-11-20 21:02:37,657 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 12cb896d-6e77-49fa-9eb7-cb4a346d902d
+2025-11-20 21:02:38,554 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:02:38,555 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:02:47,334 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:02:47,337 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 21:07:29,182 - src.core.orchestrator - INFO - User provided: Pain description: Feels like a mild ticklish pressure, almost like a tiny kitten is kneading your chest.Location: Mostly center of the chest, doesn’t really radiate anywhere.Severity: About a 2/10 on the pain scale.Triggers/relief: Gets a bit weirder after laughing or sneezing, but lying down with a hot cocoa makes it feel better.Other symptoms: Occasional hiccups, random yawning fits, and a suspicious craving for pickles. No shortness of breath, nausea, sweating, or dizziness.Medical conditions/medications: None significant, just the usual seasonal sniffles.Vitals: Temperature 36.7°C, heart rate 72 bpm, blood pressure 118/76 mmHg.Gender: Female.
+2025-11-20 21:07:29,182 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:07:29,184 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 97b355bd-35f9-4b0f-bb1a-414791ee0228
+2025-11-20 21:07:29,184 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c32c871-534a-42fa-9034-85a72d84801a
+2025-11-20 21:07:29,185 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:07:29,186 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:07:41,197 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:07:41,198 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:07:41,199 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/10 ---
+2025-11-20 21:07:41,199 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:07:41,200 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2d6d971c-2cc1-4e6f-b1b0-1e21a4d83cf1
+2025-11-20 21:07:41,201 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 97b355bd-35f9-4b0f-bb1a-414791ee0228
+2025-11-20 21:07:41,202 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:07:41,203 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:07:45,084 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:07:45,085 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:07:45,085 - src.core.orchestrator - INFO - Invoking Agent: IMAGING
+2025-11-20 21:07:45,087 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 301dacd9-09dd-455d-bcf2-e67f7476a26c
+2025-11-20 21:07:45,087 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2d6d971c-2cc1-4e6f-b1b0-1e21a4d83cf1
+2025-11-20 21:07:45,087 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 97b355bd-35f9-4b0f-bb1a-414791ee0228
+2025-11-20 21:07:45,088 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c32c871-534a-42fa-9034-85a72d84801a
+2025-11-20 21:07:45,088 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 81583f54-d14b-408f-8624-bbd755cea573
+2025-11-20 21:07:45,088 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 12cb896d-6e77-49fa-9eb7-cb4a346d902d
+2025-11-20 21:07:46,082 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:07:47,449 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:07:47,451 - src.core.orchestrator - INFO - Agent imaging finished.
+2025-11-20 21:07:47,451 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 21:07:47,452 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 6aef0aad-e6f9-4497-9abe-7d20857c5c16
+2025-11-20 21:07:47,453 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 301dacd9-09dd-455d-bcf2-e67f7476a26c
+2025-11-20 21:07:47,453 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2d6d971c-2cc1-4e6f-b1b0-1e21a4d83cf1
+2025-11-20 21:07:47,454 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:07:47,455 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:08:07,543 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:08:07,544 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 21:09:35,317 - src.core.orchestrator - INFO - User provided: General health: Pretty healthy overall, rarely sick—just the occasional cold or allergy flare-up.History of conditions: No high blood pressure, diabetes, or high cholesterol.Smoking: Never touched a cigarette, not even one.Family history: Aunt had mildly dramatic heart palpitations after too much chocolate cake, but no serious heart issues at a young age in the family.
+2025-11-20 21:09:35,317 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:09:35,319 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: ac120335-9930-426f-880d-b37f45f7dac8
+2025-11-20 21:09:35,319 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 6aef0aad-e6f9-4497-9abe-7d20857c5c16
+2025-11-20 21:09:35,319 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 301dacd9-09dd-455d-bcf2-e67f7476a26c
+2025-11-20 21:09:35,321 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:09:35,321 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:09:46,223 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:09:46,224 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:09:46,225 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/10 ---
+2025-11-20 21:09:46,225 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:09:46,227 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: dbcbcb2a-ac2c-49ee-8585-335ad4b6a05d
+2025-11-20 21:09:46,227 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: ac120335-9930-426f-880d-b37f45f7dac8
+2025-11-20 21:09:46,227 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 6aef0aad-e6f9-4497-9abe-7d20857c5c16
+2025-11-20 21:09:46,229 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:09:46,230 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:09:49,677 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:09:49,679 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:09:49,679 - src.core.orchestrator - INFO - Diagnosis Finalized by Judge.
+2025-11-20 21:09:49,680 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 21:09:49,681 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: d297fa39-7aac-49ae-9681-7364506052a4
+2025-11-20 21:09:49,682 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: dbcbcb2a-ac2c-49ee-8585-335ad4b6a05d
+2025-11-20 21:09:49,682 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: ac120335-9930-426f-880d-b37f45f7dac8
+2025-11-20 21:09:49,682 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 6aef0aad-e6f9-4497-9abe-7d20857c5c16
+2025-11-20 21:09:49,682 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 301dacd9-09dd-455d-bcf2-e67f7476a26c
+2025-11-20 21:09:49,683 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2d6d971c-2cc1-4e6f-b1b0-1e21a4d83cf1
+2025-11-20 21:09:49,683 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 97b355bd-35f9-4b0f-bb1a-414791ee0228
+2025-11-20 21:09:49,683 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c32c871-534a-42fa-9034-85a72d84801a
+2025-11-20 21:09:49,683 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 81583f54-d14b-408f-8624-bbd755cea573
+2025-11-20 21:09:49,683 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 12cb896d-6e77-49fa-9eb7-cb4a346d902d
+2025-11-20 21:09:50,631 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:09:52,333 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:09:52,334 - google_genai.types - WARNING - Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2025-11-20 21:09:52,338 - src.core.orchestrator - ERROR - Error invoking agent research: Tool 'consult_guidelines' not found.
+Available tools: tool_consult_guidelines
+
+Possible causes:
+  1. LLM hallucinated the function name - review agent instruction clarity
+  2. Tool not registered - verify agent.tools list
+  3. Name mismatch - check for typos
+
+Suggested fixes:
+  - Review agent instruction to ensure tool usage is clear
+  - Verify tool is included in agent.tools list
+  - Check for typos in function name
+Traceback (most recent call last):
+  File "C:\GIT\medagent\src\core\orchestrator.py", line 41, in _invoke_agent
+    async for event in runner.run_async(user_id="system", session_id=case.case_id, new_message=msg):
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\runners.py", line 454, in run_async
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\runners.py", line 442, in _run_with_trace
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\runners.py", line 654, in _exec_with_plugin
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\runners.py", line 431, in execute
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\agents\base_agent.py", line 291, in run_async
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\agents\llm_agent.py", line 460, in _run_async_impl
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 346, in run_async
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 433, in _run_one_step_async
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 545, in _postprocess_async
+    async for event in agen:
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\base_llm_flow.py", line 666, in _postprocess_handle_function_calls_async
+    if function_response_event := await functions.handle_function_calls_async(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\functions.py", line 198, in handle_function_calls_async
+    return await handle_function_call_list_async(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\functions.py", line 244, in handle_function_call_list_async
+    function_response_events = await asyncio.gather(*tasks)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\functions.py", line 338, in _execute_single_function_call_async
+    raise tool_error
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\functions.py", line 324, in _execute_single_function_call_async
+    tool = _get_tool(function_call, tools_dict)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\flows\llm_flows\functions.py", line 729, in _get_tool
+    raise ValueError(error_msg)
+ValueError: Tool 'consult_guidelines' not found.
+Available tools: tool_consult_guidelines
+
+Possible causes:
+  1. LLM hallucinated the function name - review agent instruction clarity
+  2. Tool not registered - verify agent.tools list
+  3. Name mismatch - check for typos
+
+Suggested fixes:
+  - Review agent instruction to ensure tool usage is clear
+  - Verify tool is included in agent.tools list
+  - Check for typos in function name
+2025-11-20 21:09:52,542 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000171036596D0>
+2025-11-20 21:09:52,543 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001710B07EE70>
+2025-11-20 21:09:52,543 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001710B0B08F0>
+2025-11-20 21:09:52,543 - asyncio - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001710B04F1D0>, 163443.5)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001710B07ED50>
+2025-11-20 21:09:52,544 - asyncio - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001710B04EE10>, 163446.953)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001710B0B07D0>
+2025-11-20 21:09:52,544 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001710B0B19D0>
+2025-11-20 21:09:52,544 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001710B0C1400>
+2025-11-20 21:09:52,545 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001710B0C3410>
+2025-11-20 21:09:52,545 - asyncio - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000001710B04EDB0>, 163449.609)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000001710B0C3350>
+2025-11-20 21:18:42,718 - src.core.orchestrator - INFO - Starting Case 3c90d948-9331-480d-8785-cb68108f1caf: Chest pain
+2025-11-20 21:18:42,718 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 21:18:43,625 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:18:43,626 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:18:45,436 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:18:45,437 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 21:18:45,437 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:18:45,438 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: bfc5a805-c818-48d8-858e-25687c56a728
+2025-11-20 21:18:46,393 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:18:46,393 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:18:55,450 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:18:55,451 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:18:55,451 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/10 ---
+2025-11-20 21:18:55,451 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:18:55,452 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: c75598b0-b720-4ca2-afe0-d28c4f08ae78
+2025-11-20 21:18:55,452 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: bfc5a805-c818-48d8-858e-25687c56a728
+2025-11-20 21:18:56,446 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:18:56,446 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:18:59,653 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:18:59,681 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:18:59,717 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 21:18:59,723 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 92499073-e639-4dc9-bfb6-00f7ecd34962
+2025-11-20 21:18:59,735 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: c75598b0-b720-4ca2-afe0-d28c4f08ae78
+2025-11-20 21:18:59,750 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: bfc5a805-c818-48d8-858e-25687c56a728
+2025-11-20 21:19:02,224 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:19:02,225 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:19:09,213 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:19:09,214 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 21:22:44,852 - src.core.orchestrator - INFO - User chose to finish. Exiting diagnostic loop.
+2025-11-20 21:22:44,852 - src.core.orchestrator - INFO - Generating final diagnosis from accumulated evidence.
+2025-11-20 21:22:44,852 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:22:44,854 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 860c5953-a06f-4a00-ba5a-21da396d66a8
+2025-11-20 21:22:44,855 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:22:44,855 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:22:47,312 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:22:47,313 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:22:47,313 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 21:22:47,315 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 7f517695-1179-474c-8b4f-a5476689fec2
+2025-11-20 21:22:47,315 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 860c5953-a06f-4a00-ba5a-21da396d66a8
+2025-11-20 21:22:47,315 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 92499073-e639-4dc9-bfb6-00f7ecd34962
+2025-11-20 21:22:47,316 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: c75598b0-b720-4ca2-afe0-d28c4f08ae78
+2025-11-20 21:22:47,316 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: bfc5a805-c818-48d8-858e-25687c56a728
+2025-11-20 21:22:48,220 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:22:48,220 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:22:58,496 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:22:58,499 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 21:56:24,786 - src.core.orchestrator - INFO - Starting Case 7be4356d-a618-46d6-b4c0-0a1c25c39d92: Chest pain
+2025-11-20 21:56:24,786 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 21:56:25,707 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:56:25,707 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:56:30,737 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:56:30,741 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 21:56:30,741 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:56:30,741 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f99f4aeb-859c-4604-953c-17ac5ed3f577
+2025-11-20 21:56:31,572 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:56:31,573 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:56:39,363 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:56:39,363 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:56:39,363 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/10 ---
+2025-11-20 21:56:39,367 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:56:39,367 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 72056c7c-84f9-44d3-b089-d7be3de06c91
+2025-11-20 21:56:39,367 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f99f4aeb-859c-4604-953c-17ac5ed3f577
+2025-11-20 21:56:40,205 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:56:40,205 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:56:42,988 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:56:42,992 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:56:42,992 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 21:56:42,992 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c9c4a4c-730d-4c4e-9908-f1fca00a2944
+2025-11-20 21:56:42,992 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 72056c7c-84f9-44d3-b089-d7be3de06c91
+2025-11-20 21:56:42,992 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f99f4aeb-859c-4604-953c-17ac5ed3f577
+2025-11-20 21:56:43,850 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:56:43,850 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:56:49,064 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:56:49,064 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 21:57:16,759 - src.core.orchestrator - INFO - User provided: The chest pain started about an hour ago, suddenly while I was just sitting and reading. It feels like a heavy, squeezing pressure right in the center of my chest. It doesn’t really move anywhere, but it kind of radiates slightly toward my left arm. I’ve also been feeling a bit short of breath and a little dizzy, and I noticed some cold sweat breaking out on my forehead. I haven’t felt nauseous yet, though.My blood pressure isn’t something I’ve checked recently, but my heart feels like it’s racing a little. For your records, I’m male.
+2025-11-20 21:57:16,759 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:57:16,763 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 10cfa035-2014-4887-981e-6e1be8a83020
+2025-11-20 21:57:16,763 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c9c4a4c-730d-4c4e-9908-f1fca00a2944
+2025-11-20 21:57:16,763 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:57:16,763 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:57:25,772 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:57:25,772 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:57:25,772 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/10 ---
+2025-11-20 21:57:25,772 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:57:25,776 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03f52191-071f-4795-b4a4-30cc3a46ca05
+2025-11-20 21:57:25,776 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 10cfa035-2014-4887-981e-6e1be8a83020
+2025-11-20 21:57:25,776 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:57:25,776 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:57:27,657 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:57:27,665 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:57:27,665 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 21:57:27,673 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 931fb045-2f41-498f-a483-361493230641
+2025-11-20 21:57:27,673 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03f52191-071f-4795-b4a4-30cc3a46ca05
+2025-11-20 21:57:27,674 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 10cfa035-2014-4887-981e-6e1be8a83020
+2025-11-20 21:57:27,674 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c9c4a4c-730d-4c4e-9908-f1fca00a2944
+2025-11-20 21:57:27,674 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 72056c7c-84f9-44d3-b089-d7be3de06c91
+2025-11-20 21:57:27,674 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f99f4aeb-859c-4604-953c-17ac5ed3f577
+2025-11-20 21:57:28,541 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:57:31,131 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:57:31,131 - google_genai.types - WARNING - Warning: there are non-text parts in the response: ['function_call', 'function_call', 'function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2025-11-20 21:57:31,135 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:57:32,792 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:57:32,792 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:57:35,209 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:57:35,213 - src.core.orchestrator - INFO - Agent evidence finished.
+2025-11-20 21:57:35,213 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 21:57:35,213 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fce657e5-9609-49fb-ba47-a6679045543e
+2025-11-20 21:57:35,213 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e91fe496-dfed-4907-b896-7d88d89d79b2
+2025-11-20 21:57:35,213 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 78ec1588-8410-407d-8781-4fe09fc3711a
+2025-11-20 21:57:35,213 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e6556389-0ab0-4d55-a5ae-b89083ad98a9
+2025-11-20 21:57:35,213 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 952d015d-b8b3-4409-9ac9-97d593f1ecca
+2025-11-20 21:57:35,217 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 931fb045-2f41-498f-a483-361493230641
+2025-11-20 21:57:35,217 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03f52191-071f-4795-b4a4-30cc3a46ca05
+2025-11-20 21:57:35,217 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:57:35,217 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:57:39,998 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:57:39,998 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 21:58:49,925 - src.core.orchestrator - INFO - User provided: I haven’t checked my vitals myself, so I don’t know the exact numbers yet. I can tell my heart feels fast, and I’ve been breathing a bit quicker than usual. I haven’t measured my oxygen or temperature.I did have a long flight about three weeks ago, and I’ve mostly been sitting at a desk since then. I haven’t had any surgeries recently. I don’t have a personal history of blood clots, and as far as I know, no one in my family does either.
+2025-11-20 21:58:49,925 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2430fe99-f019-401b-8b68-c88f0a4e4c3c
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fce657e5-9609-49fb-ba47-a6679045543e
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e91fe496-dfed-4907-b896-7d88d89d79b2
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 78ec1588-8410-407d-8781-4fe09fc3711a
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e6556389-0ab0-4d55-a5ae-b89083ad98a9
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 952d015d-b8b3-4409-9ac9-97d593f1ecca
+2025-11-20 21:58:49,929 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 931fb045-2f41-498f-a483-361493230641
+2025-11-20 21:58:49,929 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:58:49,933 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:58:59,685 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:58:59,689 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:58:59,689 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/10 ---
+2025-11-20 21:58:59,689 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:58:59,692 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: e0f4cf0d-b5cf-4a25-b6da-5e348dd26a68
+2025-11-20 21:58:59,692 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2430fe99-f019-401b-8b68-c88f0a4e4c3c
+2025-11-20 21:58:59,692 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fce657e5-9609-49fb-ba47-a6679045543e
+2025-11-20 21:58:59,693 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e91fe496-dfed-4907-b896-7d88d89d79b2
+2025-11-20 21:58:59,693 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 78ec1588-8410-407d-8781-4fe09fc3711a
+2025-11-20 21:58:59,693 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e6556389-0ab0-4d55-a5ae-b89083ad98a9
+2025-11-20 21:58:59,694 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 952d015d-b8b3-4409-9ac9-97d593f1ecca
+2025-11-20 21:58:59,695 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:58:59,696 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:59:02,932 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:59:02,932 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 21:59:02,932 - src.core.orchestrator - INFO - Invoking Agent: IMAGING
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 156d034a-61f1-4196-ada7-f41b609b2d94
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: e0f4cf0d-b5cf-4a25-b6da-5e348dd26a68
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2430fe99-f019-401b-8b68-c88f0a4e4c3c
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fce657e5-9609-49fb-ba47-a6679045543e
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e91fe496-dfed-4907-b896-7d88d89d79b2
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 78ec1588-8410-407d-8781-4fe09fc3711a
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e6556389-0ab0-4d55-a5ae-b89083ad98a9
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 952d015d-b8b3-4409-9ac9-97d593f1ecca
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 931fb045-2f41-498f-a483-361493230641
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03f52191-071f-4795-b4a4-30cc3a46ca05
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 10cfa035-2014-4887-981e-6e1be8a83020
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c9c4a4c-730d-4c4e-9908-f1fca00a2944
+2025-11-20 21:59:02,936 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 72056c7c-84f9-44d3-b089-d7be3de06c91
+2025-11-20 21:59:02,940 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f99f4aeb-859c-4604-953c-17ac5ed3f577
+2025-11-20 21:59:03,799 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:59:05,568 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:59:05,576 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:59:06,899 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:59:06,899 - src.core.orchestrator - INFO - Agent imaging finished.
+2025-11-20 21:59:06,899 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 21:59:06,903 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: ece9942d-29fe-4e2a-8563-9a983437eb4a
+2025-11-20 21:59:06,903 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: b337ada3-5120-486c-baa0-c6342f52709f
+2025-11-20 21:59:06,903 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 5a2e350f-de4e-40f1-849e-4cb1110844de
+2025-11-20 21:59:06,903 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 156d034a-61f1-4196-ada7-f41b609b2d94
+2025-11-20 21:59:06,903 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: e0f4cf0d-b5cf-4a25-b6da-5e348dd26a68
+2025-11-20 21:59:06,907 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:59:06,908 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:59:12,566 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:59:12,570 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 21:59:45,153 - src.core.orchestrator - INFO - User provided: I still haven’t checked my blood pressure or oxygen levels, but my heart definitely feels like it’s pounding, and I’ve been breathing a bit faster than usual. The pain seems worse when I take deep breaths or try to move around, and it eases slightly when I sit very still.I haven’t had chest pain like this before, not this severe anyway. I don’t have any major medical conditions—no high blood pressure, diabetes, or lung problems that I know of.If you want, I can also give a version where the patient’s vitals are measured and the numbers are realistic for a scenario with chest pain and clot risk—it can make your simulation or training much more concrete. Do you want me to do that?
+2025-11-20 21:59:45,153 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 21:59:45,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: f6404c20-cc49-4ecc-8975-6d6e3959f5c6
+2025-11-20 21:59:45,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: ece9942d-29fe-4e2a-8563-9a983437eb4a
+2025-11-20 21:59:45,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: b337ada3-5120-486c-baa0-c6342f52709f
+2025-11-20 21:59:45,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 5a2e350f-de4e-40f1-849e-4cb1110844de
+2025-11-20 21:59:45,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 156d034a-61f1-4196-ada7-f41b609b2d94
+2025-11-20 21:59:45,162 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:59:45,163 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 21:59:56,344 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 21:59:56,344 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 21:59:56,344 - src.core.orchestrator - INFO - --- Diagnostic Loop 4/10 ---
+2025-11-20 21:59:56,344 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 21:59:56,348 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 28bd4a9e-a1f7-4c32-86f8-c8911405b23e
+2025-11-20 21:59:56,348 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: f6404c20-cc49-4ecc-8975-6d6e3959f5c6
+2025-11-20 21:59:56,348 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: ece9942d-29fe-4e2a-8563-9a983437eb4a
+2025-11-20 21:59:56,348 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: b337ada3-5120-486c-baa0-c6342f52709f
+2025-11-20 21:59:56,348 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 5a2e350f-de4e-40f1-849e-4cb1110844de
+2025-11-20 21:59:56,352 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 21:59:56,353 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:00:00,670 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:00:00,670 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:00:00,674 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 22:00:00,674 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 951f27a6-c842-47ad-97d2-7de51e164c79
+2025-11-20 22:00:00,678 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 28bd4a9e-a1f7-4c32-86f8-c8911405b23e
+2025-11-20 22:00:00,678 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:00:00,682 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:00:04,923 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:00:04,926 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 22:00:13,586 - src.core.orchestrator - INFO - User chose to finish. Exiting diagnostic loop.
+2025-11-20 22:00:13,586 - src.core.orchestrator - INFO - Generating final diagnosis from accumulated evidence.
+2025-11-20 22:00:13,586 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:00:13,586 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 55ce26bf-0309-4a5a-aacd-9cf23dfb5cc0
+2025-11-20 22:00:13,592 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:00:13,593 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:00:36,139 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:00:36,143 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:00:36,143 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 54a40bbe-8005-47a0-8891-be8203443504
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 55ce26bf-0309-4a5a-aacd-9cf23dfb5cc0
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 951f27a6-c842-47ad-97d2-7de51e164c79
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 28bd4a9e-a1f7-4c32-86f8-c8911405b23e
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: f6404c20-cc49-4ecc-8975-6d6e3959f5c6
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: ece9942d-29fe-4e2a-8563-9a983437eb4a
+2025-11-20 22:00:36,157 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: b337ada3-5120-486c-baa0-c6342f52709f
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 5a2e350f-de4e-40f1-849e-4cb1110844de
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 156d034a-61f1-4196-ada7-f41b609b2d94
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: e0f4cf0d-b5cf-4a25-b6da-5e348dd26a68
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2430fe99-f019-401b-8b68-c88f0a4e4c3c
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: fce657e5-9609-49fb-ba47-a6679045543e
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e91fe496-dfed-4907-b896-7d88d89d79b2
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 78ec1588-8410-407d-8781-4fe09fc3711a
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e6556389-0ab0-4d55-a5ae-b89083ad98a9
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 952d015d-b8b3-4409-9ac9-97d593f1ecca
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 931fb045-2f41-498f-a483-361493230641
+2025-11-20 22:00:36,161 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03f52191-071f-4795-b4a4-30cc3a46ca05
+2025-11-20 22:00:36,165 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 10cfa035-2014-4887-981e-6e1be8a83020
+2025-11-20 22:00:36,165 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 6c9c4a4c-730d-4c4e-9908-f1fca00a2944
+2025-11-20 22:00:36,165 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 72056c7c-84f9-44d3-b089-d7be3de06c91
+2025-11-20 22:00:36,165 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f99f4aeb-859c-4604-953c-17ac5ed3f577
+2025-11-20 22:00:37,001 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:00:37,005 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:00:48,266 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:00:48,270 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 22:06:48,454 - src.core.orchestrator - INFO - Starting Case a4bac5c2-e6d4-4ef3-a685-807c587cad08: Chest pain
+2025-11-20 22:06:48,455 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:06:49,836 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:06:49,841 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:06:51,531 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:06:51,531 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:06:51,534 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:06:51,534 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 49c9f1e4-68d0-42db-929a-cb66ede73af2
+2025-11-20 22:06:52,476 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:06:52,476 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:07:01,693 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:07:01,695 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:07:01,695 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/10 ---
+2025-11-20 22:07:01,696 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:07:01,696 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5e70a981-5300-4886-8ffe-f64e39424522
+2025-11-20 22:07:01,696 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 49c9f1e4-68d0-42db-929a-cb66ede73af2
+2025-11-20 22:07:02,591 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:07:02,591 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:07:05,083 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:07:05,083 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:07:05,083 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 22:07:05,087 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 98b6694a-39c2-464c-a062-b331f159efca
+2025-11-20 22:07:05,087 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5e70a981-5300-4886-8ffe-f64e39424522
+2025-11-20 22:07:05,087 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 49c9f1e4-68d0-42db-929a-cb66ede73af2
+2025-11-20 22:07:05,925 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:07:05,929 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:07:08,343 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:07:08,343 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 22:08:15,955 - src.core.orchestrator - INFO - User provided: I dunno
+2025-11-20 22:08:15,956 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:08:15,959 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 5dd658f1-3454-4c15-a5ba-b0e2549a267c
+2025-11-20 22:08:15,959 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 98b6694a-39c2-464c-a062-b331f159efca
+2025-11-20 22:08:15,960 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:08:15,961 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:08:24,787 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:08:24,791 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:08:24,791 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/10 ---
+2025-11-20 22:08:24,791 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:08:24,799 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: da66f202-e9df-4da6-a3f0-19b461e848d7
+2025-11-20 22:08:24,800 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 5dd658f1-3454-4c15-a5ba-b0e2549a267c
+2025-11-20 22:08:24,803 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:08:24,803 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:08:26,989 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:08:26,989 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:08:26,992 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 22:08:26,992 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 39dc55ee-77a8-48ee-8398-e4854b84af04
+2025-11-20 22:08:26,992 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: da66f202-e9df-4da6-a3f0-19b461e848d7
+2025-11-20 22:08:26,992 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:08:26,995 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:08:30,214 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:08:30,214 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 22:08:44,973 - src.core.orchestrator - INFO - User provided: I am male I guess
+2025-11-20 22:08:44,973 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:08:44,975 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2be9ea2a-4aa9-4037-9550-21194b79b336
+2025-11-20 22:08:44,975 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 39dc55ee-77a8-48ee-8398-e4854b84af04
+2025-11-20 22:08:44,976 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:08:44,977 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:08:52,189 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:08:52,197 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:08:52,197 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/10 ---
+2025-11-20 22:08:52,197 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:08:52,205 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 774b9295-a4b8-43b7-850f-312deaefd677
+2025-11-20 22:08:52,206 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2be9ea2a-4aa9-4037-9550-21194b79b336
+2025-11-20 22:08:52,206 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:08:52,206 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:08:54,259 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:08:54,263 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:08:54,263 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 22:08:54,266 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 1f866b99-3ef3-45ff-a1bc-3011f185866f
+2025-11-20 22:08:54,266 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 774b9295-a4b8-43b7-850f-312deaefd677
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 2be9ea2a-4aa9-4037-9550-21194b79b336
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 39dc55ee-77a8-48ee-8398-e4854b84af04
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: da66f202-e9df-4da6-a3f0-19b461e848d7
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 5dd658f1-3454-4c15-a5ba-b0e2549a267c
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 98b6694a-39c2-464c-a062-b331f159efca
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5e70a981-5300-4886-8ffe-f64e39424522
+2025-11-20 22:08:54,267 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 49c9f1e4-68d0-42db-929a-cb66ede73af2
+2025-11-20 22:08:55,122 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:07,772 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:07,772 - google_genai.types - WARNING - Warning: there are non-text parts in the response: ['function_call', 'function_call', 'function_call', 'function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2025-11-20 22:09:07,780 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:10,573 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:10,577 - src.core.orchestrator - INFO - Agent evidence finished.
+2025-11-20 22:09:10,577 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 22:09:10,581 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 47e62c99-3d5c-4885-b815-4011dfd6bab7
+2025-11-20 22:09:10,581 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: c4b10b2b-8eee-44d7-ad56-e93cf002072d
+2025-11-20 22:09:10,581 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e8052dbe-1d87-4e88-8f9d-5dc08532de05
+2025-11-20 22:09:10,581 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 1f866b99-3ef3-45ff-a1bc-3011f185866f
+2025-11-20 22:09:10,581 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 774b9295-a4b8-43b7-850f-312deaefd677
+2025-11-20 22:09:10,585 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:10,585 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:09:13,200 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:13,200 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 22:09:28,652 - src.core.orchestrator - INFO - User provided: No more
+2025-11-20 22:09:28,652 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:09:28,652 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 6985f3a0-5f71-4039-80b7-88b0fad3307a
+2025-11-20 22:09:28,652 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 47e62c99-3d5c-4885-b815-4011dfd6bab7
+2025-11-20 22:09:28,656 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: c4b10b2b-8eee-44d7-ad56-e93cf002072d
+2025-11-20 22:09:28,656 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e8052dbe-1d87-4e88-8f9d-5dc08532de05
+2025-11-20 22:09:28,656 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 1f866b99-3ef3-45ff-a1bc-3011f185866f
+2025-11-20 22:09:28,656 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:28,656 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:09:36,781 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:36,789 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:09:36,791 - src.core.orchestrator - INFO - --- Diagnostic Loop 4/10 ---
+2025-11-20 22:09:36,791 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:09:36,793 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2693f97e-668f-4279-90b1-e4e3aa478d8a
+2025-11-20 22:09:36,794 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 6985f3a0-5f71-4039-80b7-88b0fad3307a
+2025-11-20 22:09:36,794 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 47e62c99-3d5c-4885-b815-4011dfd6bab7
+2025-11-20 22:09:36,794 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: c4b10b2b-8eee-44d7-ad56-e93cf002072d
+2025-11-20 22:09:36,795 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: e8052dbe-1d87-4e88-8f9d-5dc08532de05
+2025-11-20 22:09:36,796 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:36,797 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:09:39,686 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:39,686 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:09:39,688 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 22:09:39,688 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 94424a15-ee64-4bc1-8961-30b53bd264ae
+2025-11-20 22:09:39,691 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2693f97e-668f-4279-90b1-e4e3aa478d8a
+2025-11-20 22:09:39,691 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: info_assessor_agent, event id: 6985f3a0-5f71-4039-80b7-88b0fad3307a
+2025-11-20 22:09:39,694 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:44,571 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:44,574 - src.core.orchestrator - WARNING - Agent evidence returned empty response.
+2025-11-20 22:09:44,574 - src.core.orchestrator - INFO - Invoking Agent: INFO_ASSESSOR
+2025-11-20 22:09:44,578 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 3cedfcc5-4594-4245-9769-2c411cac27b1
+2025-11-20 22:09:44,578 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 94424a15-ee64-4bc1-8961-30b53bd264ae
+2025-11-20 22:09:44,578 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 2693f97e-668f-4279-90b1-e4e3aa478d8a
+2025-11-20 22:09:44,581 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:09:44,583 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:09:47,838 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:09:47,842 - src.core.orchestrator - INFO - Agent info_assessor finished.
+2025-11-20 22:20:03,170 - src.core.orchestrator - INFO - Starting Case 079568b8-bc16-423e-b6c8-44314cad63b3: Chest pain
+2025-11-20 22:20:03,170 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:20:04,131 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:04,135 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:20:04,924 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:04,928 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:20:04,928 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:20:04,928 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 55efeeb0-bbe6-4042-b9d9-45dd72f733c4
+2025-11-20 22:20:05,833 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:05,833 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:20:14,920 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:14,924 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:20:14,924 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/10 ---
+2025-11-20 22:20:14,924 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:20:14,924 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 6736e8aa-2d27-4c7f-aabb-112d5f204693
+2025-11-20 22:20:14,924 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 55efeeb0-bbe6-4042-b9d9-45dd72f733c4
+2025-11-20 22:20:15,848 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:15,848 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:20:18,034 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:18,034 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:20:29,295 - src.core.orchestrator - INFO - User provided: I do not have any additional information for you
+2025-11-20 22:20:29,295 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:20:29,295 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 691e55f0-2e0e-46a2-b6ef-ab9bd045351d
+2025-11-20 22:20:29,299 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:29,299 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:20:37,399 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:37,402 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:20:37,402 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/10 ---
+2025-11-20 22:20:37,402 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:20:37,402 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: b676ca43-e241-42f3-82cd-a6b65fe8b560
+2025-11-20 22:20:37,402 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:37,402 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:20:39,087 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:39,088 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:20:39,088 - src.core.orchestrator - INFO - Invoking Agent: EVIDENCE
+2025-11-20 22:20:39,088 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: cea0e36a-6964-4699-aed9-ba61080e7e26
+2025-11-20 22:20:39,092 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: b676ca43-e241-42f3-82cd-a6b65fe8b560
+2025-11-20 22:20:39,092 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 691e55f0-2e0e-46a2-b6ef-ab9bd045351d
+2025-11-20 22:20:39,092 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 6736e8aa-2d27-4c7f-aabb-112d5f204693
+2025-11-20 22:20:39,092 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 55efeeb0-bbe6-4042-b9d9-45dd72f733c4
+2025-11-20 22:20:40,443 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:51,287 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:51,291 - google_genai.types - WARNING - Warning: there are non-text parts in the response: ['function_call', 'function_call', 'function_call', 'function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2025-11-20 22:20:51,295 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:55,459 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:20:55,459 - src.core.orchestrator - INFO - Agent evidence finished.
+2025-11-20 22:20:55,463 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:20:55,463 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5288b788-7788-4a19-a06e-4d79d398ab81
+2025-11-20 22:20:55,463 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 99e081d6-3bf7-4533-badc-43bb40c2e402
+2025-11-20 22:20:55,463 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5ae3f24a-ccf5-4290-bc2c-a5c77f57a036
+2025-11-20 22:20:55,467 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: cea0e36a-6964-4699-aed9-ba61080e7e26
+2025-11-20 22:20:55,467 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:20:55,472 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:21:02,119 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:02,119 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:21:02,119 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/10 ---
+2025-11-20 22:21:02,119 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:21:02,123 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: f6cd40dd-7c13-4792-8ce2-53d2701e25b1
+2025-11-20 22:21:02,123 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5288b788-7788-4a19-a06e-4d79d398ab81
+2025-11-20 22:21:02,123 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 99e081d6-3bf7-4533-badc-43bb40c2e402
+2025-11-20 22:21:02,123 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5ae3f24a-ccf5-4290-bc2c-a5c77f57a036
+2025-11-20 22:21:02,126 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:21:02,127 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:21:04,038 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:04,083 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:21:04,087 - src.core.orchestrator - INFO - Invoking Agent: IMAGING
+2025-11-20 22:21:04,109 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 9fd42b51-2f33-4d1d-9139-56df971d548e
+2025-11-20 22:21:04,110 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: f6cd40dd-7c13-4792-8ce2-53d2701e25b1
+2025-11-20 22:21:04,110 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5288b788-7788-4a19-a06e-4d79d398ab81
+2025-11-20 22:21:04,110 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 99e081d6-3bf7-4533-badc-43bb40c2e402
+2025-11-20 22:21:04,111 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5ae3f24a-ccf5-4290-bc2c-a5c77f57a036
+2025-11-20 22:21:04,119 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: cea0e36a-6964-4699-aed9-ba61080e7e26
+2025-11-20 22:21:04,121 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: b676ca43-e241-42f3-82cd-a6b65fe8b560
+2025-11-20 22:21:04,122 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 691e55f0-2e0e-46a2-b6ef-ab9bd045351d
+2025-11-20 22:21:04,124 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 6736e8aa-2d27-4c7f-aabb-112d5f204693
+2025-11-20 22:21:04,124 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 55efeeb0-bbe6-4042-b9d9-45dd72f733c4
+2025-11-20 22:21:05,558 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:21:10,136 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:10,144 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:21:11,409 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:11,413 - src.core.orchestrator - INFO - Agent imaging finished.
+2025-11-20 22:21:11,413 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:21:11,417 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 39726dcd-f920-4e12-8ca8-43ba478ad3f2
+2025-11-20 22:21:11,417 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 09e0aa83-7f8b-45c6-a56c-369def4b9525
+2025-11-20 22:21:11,417 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: fa1882c7-087e-47f6-8567-c087f0dfe5ae
+2025-11-20 22:21:11,419 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 9fd42b51-2f33-4d1d-9139-56df971d548e
+2025-11-20 22:21:11,423 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:21:11,424 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:21:20,727 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:20,730 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:21:20,732 - src.core.orchestrator - INFO - --- Diagnostic Loop 4/10 ---
+2025-11-20 22:21:20,732 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:21:20,739 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 345ecc8f-e084-4f34-9608-a878d6903f97
+2025-11-20 22:21:20,739 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 39726dcd-f920-4e12-8ca8-43ba478ad3f2
+2025-11-20 22:21:20,740 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 09e0aa83-7f8b-45c6-a56c-369def4b9525
+2025-11-20 22:21:20,740 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: fa1882c7-087e-47f6-8567-c087f0dfe5ae
+2025-11-20 22:21:20,741 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:21:20,745 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:21:23,036 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:23,040 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:21:23,040 - src.core.orchestrator - INFO - Diagnosis Finalized by Judge.
+2025-11-20 22:21:23,040 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:21:23,044 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: a32decff-ab33-437d-b81b-dfc7ad71cfed
+2025-11-20 22:21:23,044 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 345ecc8f-e084-4f34-9608-a878d6903f97
+2025-11-20 22:21:23,044 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 39726dcd-f920-4e12-8ca8-43ba478ad3f2
+2025-11-20 22:21:23,044 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: 09e0aa83-7f8b-45c6-a56c-369def4b9525
+2025-11-20 22:21:23,044 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: imaging_agent, event id: fa1882c7-087e-47f6-8567-c087f0dfe5ae
+2025-11-20 22:21:23,047 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 9fd42b51-2f33-4d1d-9139-56df971d548e
+2025-11-20 22:21:23,047 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: f6cd40dd-7c13-4792-8ce2-53d2701e25b1
+2025-11-20 22:21:23,048 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5288b788-7788-4a19-a06e-4d79d398ab81
+2025-11-20 22:21:23,048 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 99e081d6-3bf7-4533-badc-43bb40c2e402
+2025-11-20 22:21:23,048 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: evidence_agent, event id: 5ae3f24a-ccf5-4290-bc2c-a5c77f57a036
+2025-11-20 22:21:23,049 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: cea0e36a-6964-4699-aed9-ba61080e7e26
+2025-11-20 22:21:23,049 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: b676ca43-e241-42f3-82cd-a6b65fe8b560
+2025-11-20 22:21:23,049 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 691e55f0-2e0e-46a2-b6ef-ab9bd045351d
+2025-11-20 22:21:23,050 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 6736e8aa-2d27-4c7f-aabb-112d5f204693
+2025-11-20 22:21:23,050 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 55efeeb0-bbe6-4042-b9d9-45dd72f733c4
+2025-11-20 22:21:24,388 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:21:24,388 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:21:32,488 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:21:32,491 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 22:27:16,933 - src.core.orchestrator - INFO - Starting Case 831d9e6c-4c0d-467e-8e03-c55266800f03: Alright, don’t roll your eyes, but it’s just this tiny annoying thing. Not ‘dramatic movie heart attack’ level, more like… ‘my body pulled a prank and now I’m mildly inconvenienced.’ It’s been bugging me a bit, so I figured I’d let you poke at it before it turns into anything embarrassing, like me Googling symptoms at 3 AM and convincing myself I’m doomed
+2025-11-20 22:27:16,933 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:27:17,855 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:27:17,855 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:27:20,057 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:27:20,061 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:27:20,061 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:27:20,065 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f71d410a-e023-4a04-b3f2-685ce39c6511
+2025-11-20 22:27:21,560 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:27:21,560 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:27:29,442 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:27:29,442 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:27:29,442 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/10 ---
+2025-11-20 22:27:29,442 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:27:29,442 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: afbb1428-4e51-42d2-b744-2ba8db857f75
+2025-11-20 22:27:29,442 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f71d410a-e023-4a04-b3f2-685ce39c6511
+2025-11-20 22:27:30,455 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:27:30,455 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:27:32,952 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:27:32,956 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:28:49,937 - src.core.orchestrator - INFO - User provided: “Fine, fine, I’ll spill. It’s this little tight, pokey feeling on the left side of my chest. Not like ‘call an ambulance,’ more like a bratty muscle that decided to throw a tantrum. Shows up when I twist or reach weirdly. Doesn’t move anywhere, doesn’t steal my breath, doesn’t make me dizzy. Just… annoying. Like a paper cut with an attitude.”
+2025-11-20 22:28:49,941 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:28:49,945 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 2ff4ae5f-3f7d-4405-8019-5f3ac424ff9a
+2025-11-20 22:28:49,951 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:28:49,951 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:29:00,185 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:29:00,189 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:29:00,189 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/10 ---
+2025-11-20 22:29:00,189 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:29:00,193 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: e0821406-319e-4709-bd09-697064d9bcc4
+2025-11-20 22:29:00,197 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:29:00,197 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:29:03,185 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:29:03,193 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:29:46,059 - src.core.orchestrator - INFO - User provided: Yeah, when I poke it—gently, I’m not out here trying to joust with my own ribs—it definitely feels a bit sore. Like the muscle’s giving me side-eye for even touching it. No fever, pulse is its usual chill self. Nothing dramatic… unless you count me complaining dramatically
+2025-11-20 22:29:46,059 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:29:46,061 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: d2e18711-bb56-4ff4-a48d-267bfc0d330f
+2025-11-20 22:29:46,061 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:29:46,061 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:29:54,914 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:29:54,918 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:29:54,918 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/10 ---
+2025-11-20 22:29:54,920 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:29:54,922 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 776c41a9-bcd8-4d43-aa94-53eee063fec9
+2025-11-20 22:29:54,925 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:29:54,926 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:29:57,288 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:29:57,290 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:29:57,290 - src.core.orchestrator - INFO - Diagnosis Finalized by Judge.
+2025-11-20 22:29:57,290 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:29:57,292 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: d5a997d0-f8ed-4369-8e02-c3a10c5bd791
+2025-11-20 22:29:57,292 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 776c41a9-bcd8-4d43-aa94-53eee063fec9
+2025-11-20 22:29:57,292 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: d2e18711-bb56-4ff4-a48d-267bfc0d330f
+2025-11-20 22:29:57,294 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: e0821406-319e-4709-bd09-697064d9bcc4
+2025-11-20 22:29:57,294 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 2ff4ae5f-3f7d-4405-8019-5f3ac424ff9a
+2025-11-20 22:29:57,294 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: afbb1428-4e51-42d2-b744-2ba8db857f75
+2025-11-20 22:29:57,294 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f71d410a-e023-4a04-b3f2-685ce39c6511
+2025-11-20 22:29:58,843 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:29:58,845 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:30:06,275 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:30:06,279 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 22:37:09,509 - src.core.orchestrator - INFO - Starting Case ea2c1464-dccd-4b7e-b18c-1bd1ce586bb1: Alright, don’t roll your eyes, but it’s just this tiny annoying thing. Not ‘dramatic movie heart attack’ level, more like… ‘my body pulled a prank and now I’m mildly inconvenienced.’ It’s been bugging me a bit, so I figured I’d let you poke at it before it turns into anything embarrassing, like me Googling symptoms at 3 AM and convincing myself I’m doomed.
+2025-11-20 22:37:09,510 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:37:10,440 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:37:10,441 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:37:12,515 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:37:12,515 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:37:12,515 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:37:12,519 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 58832e63-180c-4264-9540-d67af56f93aa
+2025-11-20 22:37:13,391 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:37:13,391 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:37:24,740 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:37:24,744 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:37:24,744 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/1 ---
+2025-11-20 22:37:24,744 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:37:24,752 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03e9810d-33d6-4780-8866-ea73d8800a0f
+2025-11-20 22:37:24,753 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 58832e63-180c-4264-9540-d67af56f93aa
+2025-11-20 22:37:25,605 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:37:25,605 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:37:29,147 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:37:29,148 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:37:45,900 - src.core.orchestrator - INFO - User provided: “Fine, fine, I’ll spill. It’s this little tight, pokey feeling on the left side of my chest. Not like ‘call an ambulance,’ more like a bratty muscle that decided to throw a tantrum. Shows up when I twist or reach weirdly. Doesn’t move anywhere, doesn’t steal my breath, doesn’t make me dizzy. Just… annoying. Like a paper cut with an attitude.”
+2025-11-20 22:37:45,900 - src.core.orchestrator - INFO - Generating final diagnosis from accumulated evidence.
+2025-11-20 22:37:45,900 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:37:45,900 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:37:45,904 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:37:47,883 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:37:47,883 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:37:47,883 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:37:47,887 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: a7f8c788-f609-4ad6-89f1-04b0b35018bf
+2025-11-20 22:37:47,887 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b42d2813-5ef8-4804-b274-b9168cfec349
+2025-11-20 22:37:47,887 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 03e9810d-33d6-4780-8866-ea73d8800a0f
+2025-11-20 22:37:47,887 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 58832e63-180c-4264-9540-d67af56f93aa
+2025-11-20 22:37:48,783 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:37:48,787 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:37:56,259 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:37:56,259 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 22:42:43,069 - src.core.orchestrator - INFO - Starting Case 1134d022-ef1d-4286-9dce-137e89a1a93d: Okay, doc, here’s the full download before my chest muscle starts demanding royalties:I’ve got this small, tight, pokey feeling on the left side of my chest. Not dramatic, not alarming—just irritating enough to make me sigh loudly. It only shows up when I twist, stretch, or reach in weird ways, like my body is punishing me for daring to move like a functional human.If I poke the spot (nicely, not like I’m interrogating it), it’s definitely tender. A little sore, a little ‘hey, don’t touch me.’ The pain doesn’t go anywhere—no arm, no jaw, no suspicious traveling nonsense. Just sits there being extra.No shortness of breath, no dizziness, no nausea, no cold sweats. My temperature is 36.7°C, very normal. My heart rate’s sitting around 72 bpm, casual, unbothered, like it’s sipping lemonade. My pulse feels steady and regular, absolutely not matching my level of unnecessary dramatic energy.No injuries, no workouts worth bragging or complaining about, unless you count sleeping like a pretzel as high athletic performance. Haven’t been sick, haven’t done anything wild. This started maybe two hours ago, comes and goes, hasn’t gotten worse—just pops up to remind me it exists, like an annoying notification I can’t swipe away.Basically: one moody chest muscle, mild attitude problem, zero actual chaos.”
+2025-11-20 22:42:43,069 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:42:44,069 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:42:44,069 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:42:46,367 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:42:46,367 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:42:46,367 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:42:46,371 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 3920e19a-c1a2-4e01-8065-39a269a61c2d
+2025-11-20 22:42:47,464 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:42:47,464 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:42:56,226 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:42:56,230 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:42:56,230 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/1 ---
+2025-11-20 22:42:56,230 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:42:56,234 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5fad8998-38a3-4f2b-93d7-79884c8afb53
+2025-11-20 22:42:56,234 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 3920e19a-c1a2-4e01-8065-39a269a61c2d
+2025-11-20 22:42:57,568 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:42:57,572 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:43:02,214 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:43:02,215 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:43:02,216 - src.core.orchestrator - INFO - Diagnosis Finalized by Judge.
+2025-11-20 22:43:02,216 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:43:02,218 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 5d8a3f1d-28f3-418e-87a6-9c94045df504
+2025-11-20 22:43:02,219 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5fad8998-38a3-4f2b-93d7-79884c8afb53
+2025-11-20 22:43:02,219 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 3920e19a-c1a2-4e01-8065-39a269a61c2d
+2025-11-20 22:43:03,097 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:43:03,098 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:43:09,774 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:43:09,778 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 22:44:08,545 - src.core.orchestrator - INFO - Starting Case e6c4d2e8-7d75-45e8-821a-083236d25f03: I dunno, just feel under the weather
+2025-11-20 22:44:08,549 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:44:09,443 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:44:09,444 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:44:11,119 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:44:11,123 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:44:11,123 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:44:11,123 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: b675b327-9a0f-4edb-b484-06b50c6ab643
+2025-11-20 22:44:11,959 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:44:11,963 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:44:21,094 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:44:21,095 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:44:21,095 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/1 ---
+2025-11-20 22:44:21,095 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:44:21,095 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 1d0363c4-d259-45f1-bfb8-dab6a53bfd98
+2025-11-20 22:44:21,095 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: b675b327-9a0f-4edb-b484-06b50c6ab643
+2025-11-20 22:44:21,912 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:44:21,912 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:44:26,599 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:44:26,603 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:44:26,603 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:44:26,607 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: f4b1a732-065b-4fed-b528-761682c9943a
+2025-11-20 22:44:26,607 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:44:26,611 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:44:29,420 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:44:29,424 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:44:29,424 - src.core.orchestrator - INFO - Generating final diagnosis from accumulated evidence.
+2025-11-20 22:44:29,424 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:44:29,433 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: cc33556a-dcd7-430e-b8c7-d3c6b544aeb5
+2025-11-20 22:44:29,437 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:44:29,438 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:44:32,216 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:44:32,216 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:44:32,216 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:44:32,220 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: c96c4648-20ba-41bd-950b-1cb176512896
+2025-11-20 22:44:32,220 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: cc33556a-dcd7-430e-b8c7-d3c6b544aeb5
+2025-11-20 22:44:32,220 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: f4b1a732-065b-4fed-b528-761682c9943a
+2025-11-20 22:44:32,222 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 1d0363c4-d259-45f1-bfb8-dab6a53bfd98
+2025-11-20 22:44:32,222 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: b675b327-9a0f-4edb-b484-06b50c6ab643
+2025-11-20 22:44:33,050 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:44:33,050 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:44:40,585 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:44:40,585 - src.core.orchestrator - INFO - Agent research finished.
+2025-11-20 22:45:14,115 - src.core.orchestrator - INFO - Starting Case f4c0b28c-270f-42ed-a9bd-07fe9dea0867: I dunno, just feel under the weather
+2025-11-20 22:45:14,115 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-20 22:45:15,758 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:45:15,758 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:45:17,997 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:45:17,997 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-20 22:45:17,999 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:45:18,000 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 2bfb40b4-c577-4fab-94dc-8aa3cbd9f895
+2025-11-20 22:45:18,939 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:45:18,940 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:45:27,373 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:45:27,375 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:45:27,375 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/2 ---
+2025-11-20 22:45:27,375 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:45:27,377 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: a41cebec-5ea7-4c46-8e37-e902cb4a984a
+2025-11-20 22:45:27,377 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 2bfb40b4-c577-4fab-94dc-8aa3cbd9f895
+2025-11-20 22:45:28,581 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:45:28,583 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:45:30,591 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:45:30,593 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:45:54,973 - src.core.orchestrator - INFO - User provided: I dunno, just worse than normal y'know
+2025-11-20 22:45:54,973 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:45:54,976 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b8386411-cdc4-4fdc-b2d1-2352d544f47f
+2025-11-20 22:45:54,977 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:45:54,978 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:45:58,289 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:45:58,289 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:45:58,292 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/2 ---
+2025-11-20 22:45:58,292 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:45:58,292 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: a315a7fe-0276-400f-aa08-888a985c2bd9
+2025-11-20 22:45:58,292 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:45:58,292 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:46:00,267 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:46:00,269 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:46:39,066 - src.core.orchestrator - INFO - User provided: My temp is really low, 33C
+2025-11-20 22:46:39,066 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-20 22:46:39,068 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 414eeaa1-9abf-4272-aa0a-ca048ebcb36e
+2025-11-20 22:46:39,069 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:46:39,070 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:46:46,611 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:46:46,617 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-20 22:46:46,621 - src.core.orchestrator - INFO - Generating final diagnosis from accumulated evidence.
+2025-11-20 22:46:46,621 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-20 22:46:46,629 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 3127a91c-cfee-4b01-aedb-b221ae2a345f
+2025-11-20 22:46:46,631 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:46:46,635 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:46:48,484 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:46:48,484 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-20 22:46:48,484 - src.core.orchestrator - INFO - Invoking Agent: RESEARCH
+2025-11-20 22:46:48,489 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 532f5189-1e48-4dff-a7aa-822a47eeca0f
+2025-11-20 22:46:48,489 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 3127a91c-cfee-4b01-aedb-b221ae2a345f
+2025-11-20 22:46:48,489 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 414eeaa1-9abf-4272-aa0a-ca048ebcb36e
+2025-11-20 22:46:48,490 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: a315a7fe-0276-400f-aa08-888a985c2bd9
+2025-11-20 22:46:48,490 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b8386411-cdc4-4fdc-b2d1-2352d544f47f
+2025-11-20 22:46:48,490 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: a41cebec-5ea7-4c46-8e37-e902cb4a984a
+2025-11-20 22:46:48,490 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: 2bfb40b4-c577-4fab-94dc-8aa3cbd9f895
+2025-11-20 22:46:49,319 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-20 22:46:49,319 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-20 22:47:05,642 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-20 22:47:05,642 - src.core.orchestrator - INFO - Agent research finished.

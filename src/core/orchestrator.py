@@ -83,61 +83,79 @@ class MedicalOrchestrator:
             hypo_out = await self._invoke_agent("hypothesis", "Generate Differential Diagnosis.", case)
             case.differential_diagnosis.append(hypo_out)
             
-            # 4. The Judge Loop (Max 3 turns to respect API rate limits)
+            # 4. The Judge Loop - Continue until user decides to finish
             MAX_LOOPS = 3
+            user_finished = False
+            
             for i in range(MAX_LOOPS):
+                if user_finished:
+                    break
+                    
                 logger.info(f"--- Diagnostic Loop {i+1}/{MAX_LOOPS} ---")
                 
                 decision = await self._invoke_agent("judge", "Review evidence. Decide next step.", case)
                 
-                # Check for Finalization
+                # Check for Finalization from Judge
                 if "DIAGNOSIS_FINAL:" in decision:
                     case.final_diagnosis = decision.split("DIAGNOSIS_FINAL:")[1].strip()
-                    logger.info("Diagnosis Finalized.")
+                    logger.info("Diagnosis Finalized by Judge.")
                     break
                 
                 # Dispatch Commands
                 await self._dispatch_command(decision, case)
                 
-                # 4.1 Assess if more information is needed
-                info_assessment = await self._invoke_agent(
-                    "info_assessor", 
-                    "Evaluate if sufficient clinical information has been gathered.", 
-                    case
-                )
-                
-                # If more info needed, ask the user if they want to provide it
-                if "MORE_INFO_NEEDED:" in info_assessment:
-                    question = info_assessment.split("MORE_INFO_NEEDED:")[1].strip()
+                # 4.1 Check if Judge is asking for more patient information
+                if "ASK_PATIENT:" in decision:
+                    question = decision.split("ASK_PATIENT:")[1].strip()
                     console.print(f"\n🤖 [bold blue]DOCTOR ASKS[/bold blue]: {question}")
                     
-                    # Give user choice
-                    console.print("\n[bold cyan]Options:[/bold cyan]")
-                    console.print("1. Provide more information")
-                    console.print("2. Proceed to diagnosis with current information")
-                    
-                    choice = console.input("[bold cyan]👤 Your choice (1 or 2)[/bold cyan]: ").strip()
+                    # await input: provide info or finish
+                    choice = None
+                    while choice not in ["1", "2"]:
+                        console.print("\n[bold cyan]Options:[/bold cyan]")
+                        console.print("1. Provide more information")
+                        console.print("2. Finish and get diagnosis")
+                        
+                        choice = console.input("[bold cyan]👤 Your choice (1 or 2)[/bold cyan]: ").strip()
+                        
+                        if choice not in ["1", "2"]:
+                            console.print("[bold red]Invalid choice. Please enter 1 or 2.[/bold red]")
+                            choice = None
                     
                     if choice == "1":
                         user_answer = console.input("[bold cyan]👤 PATIENT ANSWER[/bold cyan]: ")
                         if user_answer.strip():
                             case.history_present_illness += f"\n[Interview] Q: {question} A: {user_answer}"
                             logger.info(f"User provided: {user_answer}")
+                            # loop continues to next iteration with new data
+                        else:
+                            # no new data provided, move to final diagnosis
+                            console.print("\n[bold yellow]No additional information provided. Generating final diagnosis with current data...[/bold yellow]")
+                            logger.info("User chose option 1 but provided no new data. Finalizing diagnosis.")
+                            user_finished = True
                     elif choice == "2":
-                        console.print("\n[bold yellow]Proceeding to diagnosis with current information...[/bold yellow]")
-                        break  # Exit the loop to finalize diagnosis
+                        console.print("\n[bold yellow]Finishing diagnostic evaluation. Generating final diagnosis...[/bold yellow]")
+                        logger.info("User chose to finish. Exiting diagnostic loop.")
+                        user_finished = True
                 
-                # Refine Hypothesis based on new data
-                if i < MAX_LOOPS - 1:
+                # Refine Hypothesis based on new data (if not finished)
+                if not user_finished:
                     hypo_update = await self._invoke_agent("hypothesis", "Update Differential based on new evidence.", case)
                     case.differential_diagnosis.append(hypo_update)
 
-            # 5. Final Report
+            # 5. Final Report - Always generate if no diagnosis yet
+            if not case.final_diagnosis:
+                # if Judge didn't finalize, use the latest differential as basis for final diagnosis
+                logger.info("Generating final diagnosis from accumulated evidence.")
+                final_reasoning = await self._invoke_agent("judge", "Based on all evidence gathered, provide your final diagnosis. Start with DIAGNOSIS_FINAL:", case)
+                if "DIAGNOSIS_FINAL:" in final_reasoning:
+                    case.final_diagnosis = final_reasoning.split("DIAGNOSIS_FINAL:")[1].strip()
+                else:
+                    case.final_diagnosis = case.differential_diagnosis[-1] if case.differential_diagnosis else "Inconclusive - Referral Required"
+            
             if case.final_diagnosis:
                 report = await self._invoke_agent("research", f"Write Physician Handoff for: {case.final_diagnosis}", case)
                 case.research_notes.append(report)
-            else:
-                case.final_diagnosis = "Inconclusive - Referral Required"
 
         except EmergencyAbortException as e:
             logger.critical(str(e))
@@ -169,9 +187,6 @@ class MedicalOrchestrator:
             case.add_log("system", f"Research Finding: {res}")
             
         elif "ASK_PATIENT:" in decision:
-            q = decision.split("ASK_PATIENT:")[1].strip()
-            print(f"\n🤖 DOCTOR ASKS: {q}")
-            # Simulating user input for automated flow
-            # user_ans = input("👤 PATIENT ANSWER: ")
-            user_ans = "It started about 2 days ago." 
-            case.history_present_illness += f"\n[Interview] Q: {q} A: {user_ans}"
+            # ASK_PATIENT is handled in the main loop after _dispatch_command
+            # No action needed here
+            pass
