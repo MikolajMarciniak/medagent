@@ -1502,3 +1502,104 @@ google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429,
 2025-11-19 00:04:14,707 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
 2025-11-19 00:04:17,327 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
 2025-11-19 00:04:17,329 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-19 22:37:45,021 - src.core.orchestrator - INFO - Starting Case 5f7a8d5b-1dc3-4633-b7f8-8037035b9d0f: I am feeling rather unwell today -have severe constipation.
+2025-11-19 22:37:45,023 - src.core.orchestrator - INFO - Invoking Agent: TRIAGE
+2025-11-19 22:37:45,833 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:37:45,838 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:37:47,756 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:37:47,759 - src.core.orchestrator - INFO - Agent triage finished.
+2025-11-19 22:37:47,760 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-19 22:37:47,763 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f03dd9cb-ba9a-4343-bec8-12c93f26761b
+2025-11-19 22:37:48,531 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:37:48,532 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:37:55,309 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:37:55,311 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-19 22:37:55,312 - src.core.orchestrator - INFO - --- Diagnostic Loop 1/5 ---
+2025-11-19 22:37:55,312 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-19 22:37:55,315 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 1a6ece9e-ce91-4296-ae78-688a2733be61
+2025-11-19 22:37:55,316 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f03dd9cb-ba9a-4343-bec8-12c93f26761b
+2025-11-19 22:37:56,081 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:37:56,082 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:37:58,651 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:37:58,654 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-19 22:37:58,655 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-19 22:37:58,658 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 5547e8a3-e66c-4351-88af-99a8583670bd
+2025-11-19 22:37:58,660 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:37:58,660 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:05,406 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:05,409 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-19 22:38:05,409 - src.core.orchestrator - INFO - --- Diagnostic Loop 2/5 ---
+2025-11-19 22:38:05,410 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-19 22:38:05,414 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 18f927f4-c7c1-4012-978f-a3f6ef7b8d09
+2025-11-19 22:38:05,417 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:05,418 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:07,656 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:07,660 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-19 22:38:07,661 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-19 22:38:07,667 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: a39e9cf0-5c57-455b-a388-58c04bd39ccc
+2025-11-19 22:38:07,672 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:07,674 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:10,634 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:10,638 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-19 22:38:10,639 - src.core.orchestrator - INFO - --- Diagnostic Loop 3/5 ---
+2025-11-19 22:38:10,640 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-19 22:38:10,645 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 7ba59d48-4b72-4a7f-9718-5ff4d5497c52
+2025-11-19 22:38:10,648 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:10,650 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:15,342 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:15,345 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-19 22:38:15,347 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-19 22:38:15,352 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b6ca3dca-5a63-4e18-8c81-3d0655b31806
+2025-11-19 22:38:15,355 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:15,356 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:18,517 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:18,521 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-19 22:38:18,522 - src.core.orchestrator - INFO - --- Diagnostic Loop 4/5 ---
+2025-11-19 22:38:18,522 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-19 22:38:18,527 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 97f4592f-86bb-4207-919d-9fb0c2403abd
+2025-11-19 22:38:18,530 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:18,532 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:20,669 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:20,674 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-19 22:38:20,675 - src.core.orchestrator - INFO - Invoking Agent: HYPOTHESIS
+2025-11-19 22:38:20,680 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: baaae63f-6bee-46fa-9641-227759f15853
+2025-11-19 22:38:20,682 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:20,683 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:24,047 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:24,051 - src.core.orchestrator - INFO - Agent hypothesis finished.
+2025-11-19 22:38:24,052 - src.core.orchestrator - INFO - --- Diagnostic Loop 5/5 ---
+2025-11-19 22:38:24,052 - src.core.orchestrator - INFO - Invoking Agent: JUDGE
+2025-11-19 22:38:24,059 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5267c42a-2d21-409a-8559-e2ef87300106
+2025-11-19 22:38:24,062 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:24,063 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-11-19 22:38:24,166 - google_genai._api_client - INFO - Retrying google.genai._api_client.BaseApiClient._async_request_once in 1.1261450204561183 seconds as it raised ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10, model: gemini-2.5-flash\nPlease retry in 35.925365261s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '35s'}]}}.
+2025-11-19 22:38:25,394 - google_genai._api_client - INFO - Retrying google.genai._api_client.BaseApiClient._async_request_once in 2.630160734522592 seconds as it raised ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10, model: gemini-2.5-flash\nPlease retry in 34.697735234s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '34s'}]}}.
+2025-11-19 22:38:28,120 - google_genai._api_client - INFO - Retrying google.genai._api_client.BaseApiClient._async_request_once in 4.453179828062626 seconds as it raised ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10, model: gemini-2.5-flash\nPlease retry in 31.973473539s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '31s'}]}}.
+2025-11-19 22:38:32,651 - google_genai._api_client - INFO - Retrying google.genai._api_client.BaseApiClient._async_request_once in 8.47516686574189 seconds as it raised ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 10, model: gemini-2.5-flash\nPlease retry in 27.439139707s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.5-flash'}, 'quotaValue': '10'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '27s'}]}}.
+2025-11-19 22:38:43,604 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:43,610 - src.core.orchestrator - INFO - Agent judge finished.
+2025-11-19 22:38:43,612 - src.core.orchestrator - INFO - Invoking Agent: IMAGING
+2025-11-19 22:38:43,618 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 963f1cdd-8cd6-4046-ae91-7b4319651534
+2025-11-19 22:38:43,619 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 5267c42a-2d21-409a-8559-e2ef87300106
+2025-11-19 22:38:43,619 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: baaae63f-6bee-46fa-9641-227759f15853
+2025-11-19 22:38:43,620 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 97f4592f-86bb-4207-919d-9fb0c2403abd
+2025-11-19 22:38:43,621 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: b6ca3dca-5a63-4e18-8c81-3d0655b31806
+2025-11-19 22:38:43,621 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 7ba59d48-4b72-4a7f-9718-5ff4d5497c52
+2025-11-19 22:38:43,622 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: a39e9cf0-5c57-455b-a388-58c04bd39ccc
+2025-11-19 22:38:43,622 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 18f927f4-c7c1-4012-978f-a3f6ef7b8d09
+2025-11-19 22:38:43,623 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: judge_agent, event id: 5547e8a3-e66c-4351-88af-99a8583670bd
+2025-11-19 22:38:43,625 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: hypothesis_agent, event id: 1a6ece9e-ce91-4296-ae78-688a2733be61
+2025-11-19 22:38:43,626 - google_adk.google.adk.runners - WARNING - Event from an unknown agent: triage_agent, event id: f03dd9cb-ba9a-4343-bec8-12c93f26761b
+2025-11-19 22:38:45,479 - google_adk.google.adk.models.google_llm - INFO - Sending out request, model: gemini-2.5-flash, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2025-11-19 22:38:46,779 - google_adk.google.adk.models.google_llm - INFO - Response received from the model.
+2025-11-19 22:38:46,785 - src.core.orchestrator - ERROR - Error invoking agent imaging: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\dorot\Desktop\Projects\LLMs\medagent\src\core\orchestrator.py", line 41, in _invoke_agent
+    response_text = event.content.parts[0].text
+                    ~~~~~~~~~~~~~~~~~~~^^^
+TypeError: 'NoneType' object is not subscriptable
+2025-11-19 22:38:47,529 - asyncio - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002EF6CECBE30>
+2025-11-19 22:38:47,532 - asyncio - ERROR - Unclosed connector
+connections: ['deque([(<aiohttp.client_proto.ResponseHandler object at 0x000002EF6CEBCC50>, 1556769.281)])']
+connector: <aiohttp.connector.TCPConnector object at 0x000002EF6CEC9D90>

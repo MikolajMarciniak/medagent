@@ -28,7 +28,7 @@ class MedicalOrchestrator:
         logger.info(f"Invoking Agent: {agent_name.upper()}")
         try:
             agent = self.agents[agent_name]
-            runner = Runner(agent=agent, app_name="agents", session_service=self.session_service)
+            runner = Runner(agent=agent, app_name="megadent", session_service=self.session_service)
             
             # Construct Contextual Prompt
             context = f"CURRENT CASE STATE:\n{case.clinical_summary()}\n\nTASK:\n{task}"

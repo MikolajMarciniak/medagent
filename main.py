@@ -14,7 +14,7 @@ logger = logging.getLogger("Main")
 
 app = typer.Typer()
 console = Console()
-
+API_KEY = os.environ.get("GOOGLE_API_KEY")
 async def run_diagnosis(complaint: str):
     """
     Runs the diagnostic loop for a given complaint.
