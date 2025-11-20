@@ -21,7 +21,7 @@ def ingest_medqa():
     logger.info("Downloading MedQA (USMLE) Dataset...")
     try:
         # Streaming subset to avoid massive download
-        dataset = load_dataset("bigbio/med_qa", "med_qa_en_bigbio_qa", split="train", streaming=True, trust_remote_code=True)
+        dataset = load_dataset("bigbio/med_qa", "med_qa_en_bigbio_qa", split="train", streaming=True)
         
         docs = []
         count = 0
@@ -51,7 +51,7 @@ def ingest_medqa():
         logger.error(f"❌ Error loading data: {e}", exc_info=True)
 
 if __name__ == "__main__":
-    if not os.environ.get("GOOGLE_API_KEY"):
-        logger.error("Error: GOOGLE_API_KEY not set.")
+    if not settings.GOOGLE_API_KEY:
+        logger.error("Error: GOOGLE_API_KEY not set in .env or environment variables.")
     else:
         ingest_medqa()

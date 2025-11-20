@@ -7,6 +7,7 @@ from rich.panel import Panel
 from rich.markdown import Markdown
 from src.core.orchestrator import MedicalOrchestrator
 from src.utils.logging_setup import setup_logging
+from config.settings import settings
 
 # Setup Logger
 setup_logging()
@@ -19,8 +20,8 @@ async def run_diagnosis(complaint: str):
     """
     Runs the diagnostic loop for a given complaint.
     """
-    if not os.environ.get("GOOGLE_API_KEY"):
-        console.print("[bold red]❌ Error: GOOGLE_API_KEY environment variable required.[/bold red]")
+    if not settings.GOOGLE_API_KEY:
+        console.print("[bold red]❌ Error: GOOGLE_API_KEY not set in .env or environment variables.[/bold red]")
         return
 
     # Check for RAG data
