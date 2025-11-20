@@ -1,6 +1,11 @@
 from google.adk.agents import LlmAgent
 from google.adk.models.google_llm import Gemini
 from config.settings import settings
+import google.generativeai as genai
+
+# Configure the Google GenAI library with the API key from settings
+genai.configure(api_key=settings.GOOGLE_API_KEY)
+
 from config.prompts import (
     TRIAGE_PROMPT, HYPOTHESIS_PROMPT, JUDGE_PROMPT,
     EVIDENCE_PROMPT, IMAGING_PROMPT, RESEARCH_PROMPT

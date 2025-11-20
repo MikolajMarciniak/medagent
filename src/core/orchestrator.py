@@ -80,9 +80,9 @@ class MedicalOrchestrator:
             # 3. Hypothesis Generation
             hypo_out = await self._invoke_agent("hypothesis", "Generate Differential Diagnosis.", case)
             case.differential_diagnosis.append(hypo_out)
-            
-            # 4. The Judge Loop (Max 5 turns)
-            MAX_LOOPS = 5
+
+            # 4. The Judge Loop (Max 3 turns)
+            MAX_LOOPS = 3
             for i in range(MAX_LOOPS):
                 logger.info(f"--- Diagnostic Loop {i+1}/{MAX_LOOPS} ---")
                 
