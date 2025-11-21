@@ -9,3 +9,7 @@ datasets
 pydantic
 pydantic-settings
 pytest
+typer 
+rich.console
+rich.table
+rich.markdown

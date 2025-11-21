@@ -1,13 +1,17 @@
 import os
 from pydantic import Field
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from google.genai import types
+from dotenv import load_dotenv
+
+load_dotenv() # Load environment variables from .env file
 
 class SystemSettings(BaseSettings):
     """
     Centralized configuration management using Pydantic Settings.
     Reads from Environment Variables automatically.
     """
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
     
     # --- API Keys ---
     GOOGLE_API_KEY: str = Field(..., description="Gemini API Key")
