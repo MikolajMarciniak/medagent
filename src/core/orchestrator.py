@@ -19,6 +19,38 @@ class MedicalOrchestrator:
     Manages the lifecycle of a PatientCase through the agent swarm.
     """
     
+    @staticmethod
+    def collect_demographics() -> tuple[int, str]:
+        """
+        Collect patient demographics via CLI with validation.
+        Returns: (age, sex)
+        """
+        # Collect Age
+        while True:
+            age_input = console.input("[bold cyan]What age are you?[/bold cyan]: ").strip()
+            try:
+                age = int(age_input)
+                if 0 < age < 200:
+                    break
+                else:
+                    console.print("[bold red]Please enter an integer between 1 and 199.[/bold red]")
+            except ValueError:
+                console.print("[bold red]Please enter a valid number.[/bold red]")
+        
+        # Collect Sex
+        while True:
+            sex_input = console.input("[bold cyan]What is your sex? (m/f)[/bold cyan]: ").strip().lower()
+            if sex_input in ["male", "m"]:
+                sex = "Male"
+                break
+            elif sex_input in ["female", "f"]:
+                sex = "Female"
+                break
+            else:
+                console.print("[bold red]Please enter 'male', 'female', 'm', or 'f'.[/bold red]")
+        
+        return age, sex
+    
     def __init__(self):
         self.session_service = InMemorySessionService()
         self.agents = AgentFactory.create_agents()
@@ -55,29 +87,77 @@ class MedicalOrchestrator:
             logger.error(f"Error invoking agent {agent_name}: {e}", exc_info=True)
             return f"SYSTEM ERROR: {str(e)}"
 
-    async def run_diagnostic_loop(self, initial_complaint: str) -> PatientCase:
+    async def run_diagnostic_loop(self, initial_complaint: str = None) -> PatientCase:
         """
         Executes the full diagnostic workflow with interactive information gathering.
+        Collects demographics first, then the chief complaint via triage.
         """
-        # 1. Initialization
-        case = PatientCase(chief_complaint=initial_complaint)
-        logger.info(f"Starting Case {case.case_id}: {initial_complaint}")
+        # 1. Initialization - Collect demographics first
+        console.print("\n[bold cyan]Patient Information[/bold cyan]\n")
+        age, sex = self.collect_demographics()
+        
+        logger.info(f"Patient: Age: {age}, Sex: {sex}")
+        
+        # 2. Initialize case with demographics (complaint will be collected via triage)
+        case = PatientCase(chief_complaint="", age=age, gender=sex)
+        logger.info(f"Starting Case {case.case_id}")
         
         # Create session for the case
         await self.session_service.create_session(session_id=case.case_id, app_name="agents", user_id="system")
         
         try:
-            # 2. Triage Phase
-            triage_out = await self._invoke_agent("triage", f"Intake patient with complaint: {initial_complaint}", case)
+            # 3. Triage Phase - Collect and assess chief complaint with clarification loop
+            complaint = None
+            triage_complete = False
+            triage_attempts = 0
+            max_triage_attempts = 5
             
-            if "EMERGENCY_ABORT" in triage_out:
-                raise EmergencyAbortException(triage_out)
+            while not triage_complete and triage_attempts < max_triage_attempts:
+                triage_attempts += 1
+                
+                # Get initial complaint or follow-up response
+                if not complaint:
+                    complaint_input = console.input("[bold cyan]What brings you in today?[/bold cyan] ").strip()
+                else:
+                    complaint_input = console.input("[bold cyan]Please provide more details:[/bold cyan] ").strip()
+                
+                if not complaint_input:
+                    console.print("[bold red]Please describe your complaint.[/bold red]")
+                    continue
+                
+                # Update complaint with any new information
+                if complaint:
+                    complaint += f" {complaint_input}"
+                else:
+                    complaint = complaint_input
+                
+                case.chief_complaint = complaint
+                
+                # Assess with triage agent
+                triage_out = await self._invoke_agent("triage", f"Assess patient complaint: {complaint}", case)
+                
+                # Handle Emergency
+                if "EMERGENCY_ABORT:" in triage_out:
+                    raise EmergencyAbortException(triage_out.split("EMERGENCY_ABORT:")[1].strip())
+                
+                # Handle Clarification Request
+                if "CLARIFY_COMPLAINT:" in triage_out:
+                    clarification_q = triage_out.split("CLARIFY_COMPLAINT:")[1].strip()
+                    console.print(f"\n🤖 [bold blue]DOCTOR ASKS[/bold blue]: {clarification_q}\n")
+                    # Loop continues to ask for more details
+                    continue
+                
+                # Handle Successful Triage
+                if "TRIAGE_SUMMARY:" in triage_out:
+                    case.history_present_illness = triage_out.split("TRIAGE_SUMMARY:")[1].strip()
+                    triage_complete = True
+                else:
+                    case.history_present_illness = triage_out
+                    triage_complete = True
             
-            # Parse Triage (Simplified for demo - ideally structured output parsing)
-            case.history_present_illness = triage_out
-            # Assume Triage extracted age/gender or set defaults
-            if not case.age: case.age = 45
-            if not case.gender: case.gender = "Unknown"
+            if not triage_complete:
+                console.print("[bold yellow]Unable to obtain adequate complaint details. Proceeding with available information.[/bold yellow]")
+                logger.warning("Triage did not complete after max attempts. Proceeding anyway.")
 
             # 3. Hypothesis Generation
             hypo_out = await self._invoke_agent("hypothesis", "Generate Differential Diagnosis.", case)
