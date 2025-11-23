@@ -46,8 +46,12 @@ class ImageFeatureExtractor:
             if slice_index is None:
                 slice_index = img.shape[2] // 2
             return img[:, :, slice_index]
+        if img.ndim == 4:
+            if slice_index is None:
+                slice_index = img.shape[3] // 2
+            return img[:, :, :, slice_index]
 
-        raise ValueError("Image must be 2D or 3D.")
+        raise ValueError("Image must be 2D, 3D, or 4D.")
 
     def compute_histogram(self, slice_img, bins=64):
         hist, edges = np.histogram(slice_img, bins=bins, density=True)
