@@ -1,0 +1,23 @@
+nohup: ignoring input
+C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\cli\fast_api.py:138: UserWarning: [EXPERIMENTAL] InMemoryCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  credential_service = InMemoryCredentialService()
+C:\Users\user\.pyenv\pyenv-win\versions\3.12.9\Lib\site-packages\google\adk\auth\credential_service\in_memory_credential_service.py:33: UserWarning: [EXPERIMENTAL] BaseCredentialService: This feature is experimental and may change or be removed in future versions without notice. It may introduce breaking changes at any time.
+  super().__init__()
+INFO:     Started server process [396048]
+INFO:     Waiting for application startup.
+
++-----------------------------------------------------------------------------+
+| ADK Web Server started                                                      |
+|                                                                             |
+| For local testing, access at http://127.0.0.1:8000.                         |
++-----------------------------------------------------------------------------+
+
+INFO:     Application startup complete.
+ERROR:    [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] tylko jedno u¿ycie ka¿dego adresu gniazda (protokó³/adres sieciowy/port) jest normalnie dozwolone
+INFO:     Waiting for application shutdown.
+
++-----------------------------------------------------------------------------+
+| ADK Web Server shutting down...                                             |
++-----------------------------------------------------------------------------+
+
+INFO:     Application shutdown complete.
